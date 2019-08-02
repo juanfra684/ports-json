@@ -33,11 +33,12 @@ group_parser.add_argument(
 )
 args = arg_parser.parse_args()
 
-connection = sqlite3.connect(args.database)
-cursor = connection.cursor()
+if args.list or args.output:
+    connection = sqlite3.connect(args.database)
+    cursor = connection.cursor()
+    table = cursor.execute("SELECT * FROM Ports")
+    column_names = [n[0] for n in table.description]
 
-table = cursor.execute("SELECT * FROM Ports")
-column_names = [n[0] for n in table.description]
 discarded_columns = [
     "PathId",
     "AUTOCONF_VERSION",
