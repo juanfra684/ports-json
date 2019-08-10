@@ -189,7 +189,7 @@ elif args.output:
     dict_info["BUILD_DATE"] = datetime.utcnow().strftime("%Y%m%d%H%M")
     list_final = [dict_info, list_ports]
     with open(args.output, "w") as filedump:
-        json.dump(list_final, filedump, ensure_ascii=False)
+        json.dump(list_final, filedump, ensure_ascii=False, indent=2)
 
 else:
     arg_parser.print_help()
