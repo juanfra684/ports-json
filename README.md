@@ -3,7 +3,7 @@ Ports JSON generator
 
 ```plain
 $ doas pkg_add python%3 sqlports
-$ git clone https://github.com/juanfra684/ports-json.git
+$ git clone https://codeberg.org/juanfra684/ports-json.git
 $ cd ports-json
 $ ./ports-json.py -h
 usage: ports-json.py [-h] [-l | -o OUTPUT] database
